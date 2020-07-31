@@ -1,0 +1,56 @@
+﻿@*@{
+    ViewBag.Title = "CardBoard";
+}*@
+
+@model LittleLaughsNurseryApp.Models.RatesAndTimings
+
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LittleLaughsNursery</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+     
+    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                            <h4 class="modal-title">Rates and Timings</h4>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                </div>
+                <div class="modal-body">
+                   <div class="container">
+                        <div class="row">
+                                    <div class="col" style="background-color:#B6DAE0"><b>Timings</b></div>
+                                    <div class="col" style="background-color:#B6DAE0"><b>Rate(Monthly)</b></div>
+                                    <div class="col" style="background-color:#B6DAE0"><b>Rate(Weekly)</b></div>
+                                    <div class="col" style="background-color:#B6DAE0"><b>Rate(3 days Per Week)</b></div>
+                                    <div class="w-100"></div>
+                            @foreach(var item in Model.rateDetails)
+                            {
+                                    
+                                    
+                                    <div class="col" style="background-color:#F2F2F2">@Html.DisplayFor(ModelItem=>item.timings)</div>
+                                    <div class="col" style="background-color:#F2F2F2">@Html.DisplayFor(ModelItem=>item.rate_Monthly)</div>
+                                    <div class="col" style="background-color:#F2F2F2">@Html.DisplayFor(ModelItem=>item.rate_Weekly)</div>
+                                    <div class="col" style="background-color:#F2F2F2">@Html.DisplayFor(ModelItem=>item.threeDaysPerWeek)</div>
+                                    <div class="w-100"></div>
+                            }
+                      </div>
+                   </div>
+               </div>
+           </div>
+        </div>
+    </div>
+
+    
+ </body>
+</html>

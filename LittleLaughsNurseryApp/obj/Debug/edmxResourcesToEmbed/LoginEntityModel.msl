@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LoginModelStoreContainer" CdmEntityContainer="LoginEntities">
+    <EntitySetMapping Name="loginDetails">
+      <EntityTypeMapping TypeName="LoginModel.loginDetail">
+        <MappingFragment StoreEntitySet="loginDetails">
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="UserId" ColumnName="UserId" />
+          <ScalarProperty Name="UserName" ColumnName="UserName" />
+          <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Rates">
+      <EntityTypeMapping TypeName="LoginModel.Rate">
+        <MappingFragment StoreEntitySet="Rates">
+          <ScalarProperty Name="Rate_ID" ColumnName="Rate_ID" />
+          <ScalarProperty Name="Rate_3DaysPerWeek" ColumnName="Rate_3DaysPerWeek" />
+          <ScalarProperty Name="Rate_weekly" ColumnName="Rate_weekly" />
+          <ScalarProperty Name="Rate_Monthly" ColumnName="Rate_Monthly" />
+          <ScalarProperty Name="Timings" ColumnName="Timings" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="MealCharts">
+      <EntityTypeMapping TypeName="LoginModel.MealChart">
+        <MappingFragment StoreEntitySet="MealChart">
+          <ScalarProperty Name="MealID" ColumnName="MealID" />
+          <ScalarProperty Name="Snacks" ColumnName="Snacks" />
+          <ScalarProperty Name="Lunch" ColumnName="Lunch" />
+          <ScalarProperty Name="Breakfast" ColumnName="Breakfast" />
+          <ScalarProperty Name="Days" ColumnName="Days" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

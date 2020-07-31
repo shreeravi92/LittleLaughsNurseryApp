@@ -1,0 +1,68 @@
+﻿@*@{
+    ViewBag.Title = "SignUp";
+}*@
+@*@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}*@
+
+@model LittleLaughsNurseryApp.loginDetail
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LittleLaughsNursery</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div class="modal fade" id="mySignUpModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                @using (Html.BeginForm("SignUp", "Home", FormMethod.Post))
+                {
+                    <form class="Modal-content animate" action="/action_page.php" method="post">
+                        <div class="modal-header">
+                            <h5 class="modal-title">CREATE A ACCOUNT</h5>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+                        <div class="Error_SignUp">
+                            <label id="err_signup"></label>
+                        </div>
+                        <div class="containerbody">
+                            @Html.LabelFor(a => a.Name)
+                            @Html.TextBoxFor(a => a.Name, new { Placeholder = "Enter your name", @required = "required" })
+                            @Html.LabelFor(a => a.UserName)
+                            @Html.TextBoxFor(a => a.UserName, new { Placeholder = "Enter your email", @required = "required" })
+                            @Html.LabelFor(a => a.Pwd)
+                            @Html.TextBoxFor(a => a.Pwd, new { Placeholder = "Enter your password", @required = "required" })
+                            <button type="submit" class="btn btn-primary" id="Submit">Sign Up</button>
+                            
+                            @*<label>
+                                <input type="checkbox" checked="checked" name="remember" />
+                                Remember Me
+                            </label>*@
+                            <div class="signUpFooter">
+                                <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                            </div>
+                        </div>
+                    </form>
+                    <script>
+
+                        if ('@ViewBag.FailureMessage' == "Failure") {
+                            //alert("Success");
+                            $('#mySignUpModal').modal('show');
+                            document.getElementById('err_signup').style.visibility = "show";
+                            document.getElementById('err_signup').innerText = "UserName already exists.Try with different UserName";
+                        }
+                    </script>
+                }
+            </div>
+        </div>
+    </div>
+    </body>
+    </html>

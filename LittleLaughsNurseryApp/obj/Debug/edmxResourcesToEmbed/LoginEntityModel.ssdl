@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="LoginModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
+  <EntityContainer Name="LoginModelStoreContainer">
+    <EntitySet Name="loginDetails" EntityType="LoginModel.Store.loginDetails" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="MealChart" EntityType="LoginModel.Store.MealChart" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Rates" EntityType="LoginModel.Store.Rates" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+  <EntityType Name="loginDetails">
+    <Key>
+      <PropertyRef Name="UserId" />
+    </Key>
+    <Property Name="UserId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+    <Property Name="UserName" MaxLength="50" Type="varchar" />
+    <Property Name="Pwd" MaxLength="50" Type="varchar" />
+    <Property Name="Name" MaxLength="255" Type="varchar" />
+  </EntityType>
+  <EntityType Name="MealChart">
+    <Key>
+      <PropertyRef Name="MealID" />
+    </Key>
+    <Property Name="Days" MaxLength="255" Type="varchar" />
+    <Property Name="Breakfast" MaxLength="255" Type="varchar" />
+    <Property Name="Lunch" MaxLength="255" Type="varchar" />
+    <Property Name="Snacks" MaxLength="255" Type="varchar" />
+    <Property Name="MealID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+  </EntityType>
+  <EntityType Name="Rates">
+    <Key>
+      <PropertyRef Name="Rate_ID" />
+    </Key>
+    <Property Name="Timings" MaxLength="255" Type="varchar" />
+    <Property Name="Rate_Monthly" Type="int" />
+    <Property Name="Rate_weekly" Type="int" />
+    <Property Name="Rate_3DaysPerWeek" Type="int" />
+    <Property Name="Rate_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+  </EntityType>
+</Schema>

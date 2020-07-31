@@ -1,0 +1,161 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model LittleLaughsNurseryApp.Models.LoginDetails
+
+
+@Html.Action("CardBoard", "Home")
+
+@Html.Action("MealChart", "Home")
+
+@{Html.RenderPartial("SignUp");}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@ViewData["Title"] - LittleLaughsNursery</title>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+
+</head>
+
+<body>
+    <div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="https://lh3.googleusercontent.com/zOdsvbISMEx2Ik9JE31q2dPZ1TPbbQZpVzDenSgbhJnXX6gsaDG0HIAPuyTg3b0ovsTmyocpvBk9GZRK1mdwStA_B6ZhKVVjRkbxk7Hlu9KrPQVfcnXhK-frYRLG-nl36-gXQS6fkCmaG7wPH7pNWcTO6MRbtYJ_5MWkSjYkUb5fP8Pot3HIob9hzRSCFJTQfJumE7HahOXCxcZiLndVzYzozpy4jxXUdr_y7cwbazsxEGzZoAv2-1cfzV0M-5hTVHTfC8EJti6GIFc3J7hOmO6hQxiiSjhnEIFRILuXaXkm1ntgq1rgIvLcYIYUI-EGlC32j9MSQiw-DoBgld9TwjeAUyeTAaM784qOsW7eDPULrfImLN9vzCFfX9LoWmH8N36xEv5sVlN6MHhqNBDyFCdlY_8uHOA2GHRCWNEQUg0TGKBF4IhqtELptpqh0dBodkT1kf_S_x16WmlpuBybLDYweoj0ga9v7vg-k8e32gMNyMSvYZgwUZFs9egQNHDTyRwPoEfhHB9mkR716qOufoP0K-JM4pLNtkCblpOcb2fSqJTmfte5Z5lbRXSqYMW7P1pYAyGVzShjhjR3tuBWTRgYpYGL0bT3O19UmCUFR7mPzPnjYvX4swiTaCDi_Fim4kMoHvGuiKUzdcJjfTVmjSLucsct6fWyLM6FlsFf0m34NaeHXpnTvA=w1366-h582-no" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://lh3.googleusercontent.com/WkxwaIkQfsEdGtDfOsk-HUB40NO-T9-T81w1yrlnot2G4BhcS0DHESgXr6aKrlWwo9awde5SGc6oesLbKs6qOgBCnxp7DLdb1PS0tDdHcxm1dKLg4RDe9-06q--lultUucs1jZICGFFnGiQ2lVMF27yyoHMVFu8tIZ7ZT913BMdXNLNCrlKZ566KEcS1KhDiaqpnTKKoX1XvfFfbRb_Ow5M7rz6HqxxxbnzK_Tpc6NRGipkyyro4q9nBzwOxN5e_hLqWe5ysHh1PTUzkw9TB2kR05XvkPCCC8K4Y4Y7EvcYUkWFELpCSL82GzQaD2fZvUdU-K0VIcstGzCrXbwDCww3MDgfaJjbjXIX-T8kLnk5bLWrnFQyaRCzUWlGJXdHP7AP8p-Nejel2vDyRU-hwsKboOSGiEd5avGI8v-KJFNhzva6RaaS60nURCmgrhHr1AfjbqtC1I1FBse_I1z9GI19II_b4gDNM3vzoA2mmWDrOwnm6f_6OE53Z-qfRB2Xj8oDMGpNnGt02Okb0kE2qUlDoWeoPr9-D2veTj1CJhN0WlgNk4SAh_YxaRrHbjaB_YLLEb7UgfL4B1A1lX0q_RxqnFT_v72QKMORKHRm-UzuepkUYLCEd7G67S3ChnNyJdXwPDajdqHLPMY7tMIpHMyrn8EDnt1PSeySNR3JEZrc6MXPfrB6urg=w1257-h608-no" class="d-block w-100" alt="...">
+            </div>
+            <div class="carousel-item">
+                <img src="https://lh3.googleusercontent.com/T7PR2rrulcoVqeAAefGMtbn1D3-eCAPSqsUdKpngoAiPufqsYXnxb9M4ehdweufRmLFAT_ZEDjJZPRDyW61_LRCLDDZXq2QbMbaw5ieZvqNdkBxDxxSIHyq1_HSnBgMFdfTzN4zAaSeSmDqqv-V3N6cqrmcgs273eOiFFRMCWYM9Z0KmzKFiCNv-H0gs8mtTgi0cC7ZOvYn0D3SPcvsrsyJLFGCDCEmmyYUUOyKYfFgoplruUe4Fn0tyxHLWjCG2Ab920CVsWMXgwnVkjEs0ifp7hNZTY4d8tnofF3XuhKnMBmPk0RUhuu6xSbsYUnC7DfJvmZJKfcVPbQNFsomLkeSu_Ei7FJ52F_0Elkbg4fXSdOP05LbaBMdMHasY6Zxx2Qm8Fn89UqpBR1tpCMUqoTptuN7lNK03-TMucOU6wn-8ltdQ0MGxQYGC85FJUvEP4Xu0-9LYb69Be0cVChGbKL5wwCVtFN4zc4MMOZCYcyINq07ryYNJ05deyZsI3ViKRUAY72gvGzhDliURqk4raqlcU0gwHNtTEvriCqRZKQtF6xW1KjD8hUFLbAa7usopzb9ABZtMsw9zZAm8tk5J9FyPrloU93a6o_0B1aL8SziRaW3UFEEN4r7cuKcDaSgVwsOEncNrrcWByi1ywcupuGhaTG-BEWxd2xkIoKEnkremvs5D_-1RTg=w1295-h608-no" class="d-block w-100" alt="...">
+            </div>
+        </div>
+    </div>
+
+    <div class="modal fade" id="myLoginModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                @using (Html.BeginForm("Index", "Home", FormMethod.Post))
+                {
+                    <form class="Modal-content animate" action="/action_page.php" method="post">
+                        <div class="modal-header">
+                            <h4 class="modal-title">Login Form</h4>
+                            <button type="button" class="close" data-dismiss="modal">×</button>
+                        </div>
+                        <div class="Error">
+                            <label id="err"></label>
+                        </div>
+                        <div class="containerbody">
+                            @Html.LabelFor(a => a.UserName)
+                            @Html.TextBoxFor(a => a.UserName, new { Placeholder = "Enter Username", @required = "required" })
+                            @Html.LabelFor(a => a.Password)
+                            @Html.TextBoxFor(a => a.Password, new { Placeholder = "Enter Password", @required = "required" })
+                            <button type="submit" class="btn btn-primary" id="Submit">Login</button>
+                            <label>
+                                <input type="checkbox" checked="checked" name="remember" />
+                                Remember Me
+                            </label>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Cancel</button>
+                        </div>
+                        <div class="modal-footer">
+                            <p>Forgot<a href="#"> Password?</a></p>
+                        </div>
+                    </form>
+                    <script>
+
+                        if ('@ViewBag.Message' == "Failure") {
+                            //alert("Success");
+                            $('#myLoginModal').modal('show');
+                            document.getElementById('err').style.visibility = "show";
+                            document.getElementById('err').innerText = "Enter correct username and password.";
+                        }
+                    </script>
+                }
+            </div>
+        </div>
+    </div>
+
+
+    <div class="imgCards">
+        <h1>Information</h1>
+        <div class="card-deck">
+            <div class="card">
+                <img src="https://media.defense.gov/2010/Mar/16/2000385106/780/780/0/100312-F-6448T-001.JPG" class="card-img-top" height="500px" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Rate card and Timings</h5>
+                    <p class="card-text">Would you like to know more? Let us tell you more about our rates and timings. </p>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg">View Details</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <img src="https://media.defense.gov/2019/Mar/06/2002096791/780/780/0/190225-F-SM956-2143.JPG" class="card-img-top" height="500px" alt="...">
+                <div class="card-body">
+                    <h5 class="card-title">Meal Chart</h5>
+                    <p class="card-text">Take a look on our healthy and delicious meal plan.</p>
+                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target=".bd-meal-modal-lg">View Details</a>
+                </div>
+            </div>
+
+            <div class="card">
+                <a href="#" data-toggle="modal" data-target="#modalRegular">
+                    <img src="https://lh3.googleusercontent.com/iQyYuhpXXbLlFnqEgq7qPlwJIq9OpK_MLrXIx0wfbnfTYZR4JR71vhPVXlqJZDNIRY1BwzUmIJgC9jvqRZDEDtbq-h3_wd53oy7Z2DXonDbqY_IklYkaA18G8iQbnk3ff1KbtXvhjBpItXMuvrFzhNCafx3wpDP54_Q8dDdav1LZEEKoyp8o-xF7mXXTMydFKcJBSbNgA_DWmwaUvCjbGP3F0bEEKvfYfc9jfp6qElZKmWtrSytP5iRJP-fzV3gmRZToAjpb0p-POVuRqkqL84WnvySz-YLLmGPNUV6lEuexglGxJkYvIBQQP_WLnLZ1_4vaRlTmVqXJ9XFfRDnKtWUxVK2GexYQO1C4TFAtbxzP3qrr7D-nJx3vtGTOpn1AGqkf7gsNjBI7fouRnhjWQ-pVsBrvae2-WIZ1c1b3apv9WHj_JmfCwwIxCiBq9w4rBkgcqSJFvYS1Xnm4S2wvz08IxrJ_UhA3yKOFR2emuoifFlLbl2csDXuY90XiQZ2XRQQF65L49YTPN46gMZQ3Rpw-hwH-110us07LhMqoru0mF4dRWk1Hd8lPeuWkWLTpF296nvjJr9nruJrAq4UyOXgrvNgRgr6O42uqo2clZ1t_TpZRXAwpmRiTwneYlsK-oN_wzjKNhaktr2qP8gFZ2BHJIGTT1jD2hFFXQWXG66m5AveJR8wwcA=w451-h430-no" class="card-img-top" height="500px" alt="...">
+                </a>
+                <div class="card-body">
+                    <h5 class="card-title">Location</h5>
+                    <p class="card-text">Come and visit us with the following map.</p>
+                    <a href="#" class="btn btn-primary">View Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="modalRegular" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg" role="document">
+
+            <!--Content-->
+            <div class="modal-content">
+
+                <!--Body-->
+                <div class="modal-body mb-0 p-0">
+
+                    <!--Google map-->
+                    <div id="map-container-google-16" class="z-depth-1-half map-container-9" style="height: 400px">
+                        <iframe src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDVh4jU4OcRbT4nG1PegLaBgTwn_pWecHw&q=Franklin+Point,+27-29+Weedon+Rd,+Northampton+NN5+5BE" frameborder="0" style="border: 0" allowfullscreen></iframe>
+                    </div>
+
+                </div>
+
+                <!--Footer-->
+                <div class="modal-footer justify-content-center">
+
+                    @*<button type="button" class="btn btn-info btn-md">Save location <i class="fas fa-map-marker-alt ml-1"></i></button>*@
+                    <button type="button" class="btn btn-outline-info btn-md" data-dismiss="modal">Close<i class="fas fa-times ml-1"></i></button>
+
+                </div>
+
+            </div>
+            <!--/.Content-->
+
+        </div>
+    </div>
+
+    <div>
+        <script>
+            if ('@ViewBag.SuccessMessage' == "Success") {
+                //alert("Success");
+                alert("You have been registered successfully.Please Login with your credentials.")
+        }
+        </script>
+    </div>
+</body>
+</html>

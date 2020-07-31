@@ -1,0 +1,140 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl" Alias="Self" Namespace="LoginModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008">
+        <EntityContainer Name="LoginModelStoreContainer">
+          <EntitySet Name="loginDetails" EntityType="LoginModel.Store.loginDetails" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MealChart" EntityType="LoginModel.Store.MealChart" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Rates" EntityType="LoginModel.Store.Rates" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+        <EntityType Name="loginDetails">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+          <Property Name="UserName" MaxLength="50" Type="varchar" />
+          <Property Name="Pwd" MaxLength="50" Type="varchar" />
+          <Property Name="Name" MaxLength="255" Type="varchar" />
+        </EntityType>
+        <EntityType Name="MealChart">
+          <Key>
+            <PropertyRef Name="MealID" />
+          </Key>
+          <Property Name="Days" MaxLength="255" Type="varchar" />
+          <Property Name="Breakfast" MaxLength="255" Type="varchar" />
+          <Property Name="Lunch" MaxLength="255" Type="varchar" />
+          <Property Name="Snacks" MaxLength="255" Type="varchar" />
+          <Property Name="MealID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+        </EntityType>
+        <EntityType Name="Rates">
+          <Key>
+            <PropertyRef Name="Rate_ID" />
+          </Key>
+          <Property Name="Timings" MaxLength="255" Type="varchar" />
+          <Property Name="Rate_Monthly" Type="int" />
+          <Property Name="Rate_weekly" Type="int" />
+          <Property Name="Rate_3DaysPerWeek" Type="int" />
+          <Property Name="Rate_ID" Nullable="false" StoreGeneratedPattern="Identity" Type="int" />
+        </EntityType>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="LoginModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="LoginEntities" p1:LazyLoadingEnabled="true">
+          <EntitySet Name="loginDetails" EntityType="LoginModel.loginDetail" />
+          <EntitySet Name="Rates" EntityType="LoginModel.Rate" />
+          <EntitySet Name="MealCharts" EntityType="LoginModel.MealChart" />
+        </EntityContainer>
+        <EntityType Name="loginDetail">
+          <Key>
+            <PropertyRef Name="UserId" />
+          </Key>
+          <Property Name="UserId" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+          <Property Name="UserName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="Pwd" MaxLength="50" FixedLength="false" Unicode="false" Type="String" />
+          <Property Type="String" Name="Name" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Rate">
+          <Key>
+            <PropertyRef Name="Rate_ID" />
+          </Key>
+          <Property Type="String" Name="Timings" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="Rate_Monthly" />
+          <Property Type="Int32" Name="Rate_weekly" />
+          <Property Type="Int32" Name="Rate_3DaysPerWeek" />
+          <Property Type="Int32" Name="Rate_ID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+        <EntityType Name="MealChart">
+          <Key>
+            <PropertyRef Name="MealID" />
+          </Key>
+          <Property Type="String" Name="Days" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Breakfast" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Lunch" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="Snacks" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Int32" Name="MealID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="LoginModelStoreContainer" CdmEntityContainer="LoginEntities">
+          <EntitySetMapping Name="loginDetails">
+            <EntityTypeMapping TypeName="LoginModel.loginDetail">
+              <MappingFragment StoreEntitySet="loginDetails">
+                <ScalarProperty Name="Name" ColumnName="Name" />
+                <ScalarProperty Name="UserId" ColumnName="UserId" />
+                <ScalarProperty Name="UserName" ColumnName="UserName" />
+                <ScalarProperty Name="Pwd" ColumnName="Pwd" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Rates">
+            <EntityTypeMapping TypeName="LoginModel.Rate">
+              <MappingFragment StoreEntitySet="Rates">
+                <ScalarProperty Name="Rate_ID" ColumnName="Rate_ID" />
+                <ScalarProperty Name="Rate_3DaysPerWeek" ColumnName="Rate_3DaysPerWeek" />
+                <ScalarProperty Name="Rate_weekly" ColumnName="Rate_weekly" />
+                <ScalarProperty Name="Rate_Monthly" ColumnName="Rate_Monthly" />
+                <ScalarProperty Name="Timings" ColumnName="Timings" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="MealCharts">
+            <EntityTypeMapping TypeName="LoginModel.MealChart">
+              <MappingFragment StoreEntitySet="MealChart">
+                <ScalarProperty Name="MealID" ColumnName="MealID" />
+                <ScalarProperty Name="Snacks" ColumnName="Snacks" />
+                <ScalarProperty Name="Lunch" ColumnName="Lunch" />
+                <ScalarProperty Name="Breakfast" ColumnName="Breakfast" />
+                <ScalarProperty Name="Days" ColumnName="Days" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>
